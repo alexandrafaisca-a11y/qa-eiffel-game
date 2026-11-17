@@ -1,0 +1,13 @@
+{
+  "name": "qa-tour-eiffel",
+  "version": "1.0.0",
+  "description": "QA Tour Eiffel Challenge Game",
+  "main": "server-json.js",
+  "scripts": {
+    "start": "node server-json.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
