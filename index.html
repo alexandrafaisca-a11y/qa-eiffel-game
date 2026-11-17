@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process Eiffel Tower Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== LOGIN ===== -->
+<div id="screen-login" class="screen">
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-logo">
+        <svg viewBox="0 0 200 600" width="70" height="210" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;filter:drop-shadow(0 4px 12px rgba(124,58,237,0.25))">
+          <defs>
+            <linearGradient id="lgLogin" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#e9d5ff"/>
+              <stop offset="30%" style="stop-color:#c4b5fd"/>
+              <stop offset="70%" style="stop-color:#a78bfa"/>
+              <stop offset="100%" style="stop-color:#7C3AED"/>
+            </linearGradient>
+            <linearGradient id="lgLoginDark" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#9f7aea"/>
+              <stop offset="100%" style="stop-color:#6d28d9"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Base platform -->
+          <rect x="10" y="570" width="180" height="18" rx="3" fill="url(#lgLoginDark)"/>
+          <rect x="15" y="575" width="170" height="8" rx="2" fill="url(#lgLogin)"/>
+
+          <!-- 4 base feet pads -->
+          <rect x="18" y="552" width="32" height="22" rx="2" fill="url(#lgLoginDark)"/>
+          <rect x="150" y="552" width="32" height="22" rx="2" fill="url(#lgLoginDark)"/>
+          <rect x="70" y="560" width="24" height="14" rx="2" fill="url(#lgLoginDark)"/>
+          <rect x="106" y="560" width="24" height="14" rx="2" fill="url(#lgLoginDark)"/>
+
+          <!-- 3 arches at base (iron lattice curves) -->
+          <path d="M 70 570 Q 100 500 130 570" fill="none" stroke="url(#lgLogin)" stroke-width="8" stroke-linecap="round"/>
+          <path d="M 20 570 Q 45 520 70 570" fill="none" stroke="url(#lgLogin)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M 130 570 Q 155 520 180 570" fill="none" stroke="url(#lgLogin)" stroke-width="6" stroke-linecap="round"/>
+
+          <!-- Lattice pattern in arches -->
+          <line x1="25" y1="560" x2="65" y2="530" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.7"/>
+          <line x1="65" y1="560" x2="25" y2="530" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.7"/>
+          <line x1="135" y1="560" x2="175" y2="530" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.7"/>
+          <line x1="175" y1="560" x2="135" y2="530" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.7"/>
+
+          <!-- 4 main legs with curves -->
+          <!-- Left outer leg: wide at base, tapers up -->
+          <path d="M 22 555 Q 18 510 35 460 Q 40 420 60 380" fill="none" stroke="url(#lgLogin)" stroke-width="10" stroke-linecap="round"/>
+          <!-- Right outer leg -->
+          <path d="M 178 555 Q 182 510 165 460 Q 160 420 140 380" fill="none" stroke="url(#lgLogin)" stroke-width="10" stroke-linecap="round"/>
+          <!-- Left inner leg (thinner) -->
+          <path d="M 75 565 Q 70 520 72 480 Q 75 440 82 380" fill="none" stroke="url(#lgLogin)" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+          <!-- Right inner leg -->
+          <path d="M 125 565 Q 130 520 128 480 Q 125 440 118 380" fill="none" stroke="url(#lgLogin)" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+
+          <!-- X-bracing on legs -->
+          <line x1="20" y1="540" x2="65" y2="500" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.6"/>
+          <line x1="65" y1="540" x2="20" y2="500" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.6"/>
+          <line x1="180" y1="540" x2="135" y2="500" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.6"/>
+          <line x1="135" y1="540" x2="180" y2="500" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.6"/>
+
+          <!-- Horizontal stringer -->
+          <line x1="15" y1="505" x2="185" y2="505" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.5"/>
+
+          <!-- 1st platform (widest) -->
+          <rect x="40" y="375" width="120" height="12" rx="2" fill="url(#lgLoginDark)"/>
+          <rect x="45" y="380" width="110" height="6" rx="1" fill="url(#lgLogin)"/>
+
+          <!-- Body section 1 (trapezoid, widest) -->
+          <polygon points="50,375 150,375 135,310 65,310" fill="url(#lgLogin)" opacity="0.8"/>
+          <!-- Vertical bars -->
+          <line x1="70" y1="375" x2="69" y2="310" stroke="url(#lgLoginDark)" stroke-width="1.5" opacity="0.7"/>
+          <line x1="100" y1="375" x2="100" y2="310" stroke="url(#lgLoginDark)" stroke-width="1.5" opacity="0.7"/>
+          <line x1="130" y1="375" x2="131" y2="310" stroke="url(#lgLoginDark)" stroke-width="1.5" opacity="0.7"/>
+          <!-- Diagonals -->
+          <line x1="50" y1="375" x2="90" y2="310" stroke="url(#lgLoginDark)" stroke-width="1" opacity="0.5"/>
+          <line x1="110" y1="310" x2="150" y2="375" stroke="url(#lgLoginDark)" stroke-width="1" opacity="0.5"/>
+
+          <!-- 2nd platform -->
+          <rect x="55" y="305" width="90" height="11" rx="2" fill="url(#lgLoginDark)"/>
+          <rect x="58" y="309" width="84" height="5" rx="1" fill="url(#lgLogin)"/>
+
+          <!-- Body section 2 -->
+          <polygon points="62,305 138,305 125,245 75,245" fill="url(#lgLogin)" opacity="0.75"/>
+          <line x1="75" y1="305" x2="75" y2="245" stroke="url(#lgLoginDark)" stroke-width="1.5" opacity="0.6"/>
+          <line x1="100" y1="305" x2="100" y2="245" stroke="url(#lgLoginDark)" stroke-width="1.5" opacity="0.6"/>
+          <line x1="125" y1="305" x2="125" y2="245" stroke="url(#lgLoginDark)" stroke-width="1.5" opacity="0.6"/>
+
+          <!-- 3rd platform -->
+          <rect x="68" y="240" width="64" height="10" rx="2" fill="url(#lgLoginDark)"/>
+          <rect x="70" y="243" width="60" height="5" rx="1" fill="url(#lgLogin)"/>
+
+          <!-- Body section 3 (narrower) -->
+          <polygon points="75,240 125,240 115,180 85,180" fill="url(#lgLogin)" opacity="0.7"/>
+          <line x1="82" y1="240" x2="81" y2="180" stroke="url(#lgLoginDark)" stroke-width="1.2" opacity="0.6"/>
+          <line x1="100" y1="240" x2="100" y2="180" stroke="url(#lgLoginDark)" stroke-width="1.2" opacity="0.6"/>
+          <line x1="118" y1="240" x2="119" y2="180" stroke="url(#lgLoginDark)" stroke-width="1.2" opacity="0.6"/>
+
+          <!-- 4th platform (top) -->
+          <rect x="80" y="175" width="40" height="10" rx="2" fill="url(#lgLoginDark)"/>
+          <rect x="82" y="178" width="36" height="5" rx="1" fill="url(#lgLogin)"/>
+
+          <!-- Upper spire (slim cone) -->
+          <polygon points="85,175 115,175 105,100 95,100" fill="url(#lgLogin)" opacity="0.65"/>
+          <line x1="90" y1="175" x2="86" y2="100" stroke="url(#lgLoginDark)" stroke-width="1" opacity="0.5"/>
+          <line x1="100" y1="175" x2="100" y2="100" stroke="url(#lgLoginDark)" stroke-width="1" opacity="0.5"/>
+          <line x1="110" y1="175" x2="114" y2="100" stroke="url(#lgLoginDark)" stroke-width="1" opacity="0.5"/>
+
+          <!-- Top cap -->
+          <rect x="92" y="95" width="16" height="12" rx="2" fill="url(#lgLoginDark)"/>
+          <polygon points="95,95 105,95 102,78 98,78" fill="url(#lgLogin)" opacity="0.8"/>
+
+          <!-- Antenna shaft (thin vertical line) -->
+          <line x1="100" y1="78" x2="100" y2="20" stroke="url(#lgLogin)" stroke-width="2" stroke-linecap="round"/>
+          <!-- Antenna rings -->
+          <circle cx="100" cy="55" r="5" fill="none" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="100" cy="40" r="4" fill="none" stroke="url(#lgLogin)" stroke-width="1.5" opacity="0.6"/>
+
+          <!-- Antenna ball/tip -->
+          <circle cx="100" cy="15" r="6" fill="url(#lgLogin)"/>
+          <circle cx="100" cy="15" r="3" fill="url(#lgLoginDark)"/>
+        </svg>
+      </div>
+      <h1 class="login-title">Process Tower</h1>
+      <p class="login-subtitle">Challenge</p>
+      <p class="login-desc">Select your team and enter your password</p>
+
+      <div class="login-form">
+        <label class="login-label">Team</label>
+        <div class="team-picker" id="teamPicker"></div>
+
+        <label class="login-label" style="margin-top:20px">Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="loginPassword" class="login-input" placeholder="Enter team password..." onkeydown="if(event.key==='Enter')doLogin()" />
+          <button class="pw-toggle" onclick="togglePw()" id="pwToggle">👁</button>
+        </div>
+        <div id="loginError" class="login-error"></div>
+        <button class="btn-primary login-btn" onclick="doLogin()">Enter →</button>
+      </div>
+
+      <div style="margin-top:24px;text-align:center;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <button class="admin-btn" onclick="adminReset()">⚙ Reset</button>
+        <button class="admin-btn" onclick="adminResetSuggestions()">🗑️ Suggestions</button>
+        <button class="admin-btn" onclick="showAdminPwPanel()">🔑 Passwords</button>
+        <button class="admin-btn" onclick="exportCSV()">⬇ CSV</button>
+        <a href="/admin.html" target="_blank" class="admin-btn" style="text-decoration:none">📺 Host</a>
+      </div>
+    </div>
+
+    <!-- Right column: ranking + rules -->
+    <div class="login-right">
+      <div class="login-ranking">
+        <h3>🏆 Live Ranking</h3>
+        <div id="loginRanking"></div>
+      </div>
+
+      <div class="login-rules">
+        <h3>📋 Game Rules</h3>
+        <ul>
+          <li><span class="rule-icon">👥</span> <span>6 teams compete simultaneously</span></li>
+          <li><span class="rule-icon">📝</span> <span>Complete <strong>73 sub-processes</strong> across 5 phases</span></li>
+          <li><span class="rule-icon">💡</span> <span>Each task requires a written answer (min. 20 characters)</span></li>
+          <li><span class="rule-icon">✅</span> <span>Each validated answer earns <strong>+10 points</strong></span></li>
+          <li><span class="rule-icon">🗼</span> <span>Complete a full process (all sub-tasks) to light up a <strong>tower section</strong></span></li>
+          <li><span class="rule-icon">📈</span> <span>Tower lights bottom-up — 22 sections total</span></li>
+          <li><span class="rule-icon">🏅</span> <span>First team to finish all 73 tasks <strong>wins</strong>!</span></li>
+          <li><span class="rule-icon">💾</span> <span>Your progress is saved automatically</span></li>
+        </ul>
+        <div class="rules-max-pts">Max: <strong>730 pts</strong> &nbsp;|&nbsp; 5 Phases &nbsp;|&nbsp; 22 Processes &nbsp;|&nbsp; 73 Tasks</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TEAM SELECT (ranking only, kept for internal nav) ===== -->
+<div id="screen-team-select" class="screen" style="display:none"></div>
+
+<!-- ===== GAME ===== -->
+<div id="screen-game" class="screen">
+  <div class="game-layout">
+
+    <!-- SIDEBAR: Tower -->
+    <div class="sidebar-left">
+      <div class="team-badge" id="currentTeamBadge"></div>
+
+      <div class="tower-container">
+        <div class="tower-title">Eiffel Tower</div>
+        <div class="tower-wrap">
+          <svg id="towerSVG" viewBox="0 0 160 500" width="130" height="406" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+
+            <!--
+              EIFFEL TOWER — redesigned with accurate silhouette
+              Coordinate reference (viewBox 160×500):
+                Ground: y=490  Base platform: y=474
+                1st platform: y=360  2nd platform: y=270  3rd platform: y=195
+                Top platform: y=130  Antenna base: y=108  Tip: y=10
+              Left outer leg:  x=8→56   Right outer leg: x=152→104
+              Left inner leg:  x=52→64  Right inner leg: x=108→96
+              Body narrows: 56-104 at 1st, 60-100 at 2nd, 64-96 at 3rd, 66-94 top
+            -->
+
+            <!-- ts22: Ground slab + 4 feet pads -->
+            <g class="tower-section" id="ts22">
+              <rect x="2" y="480" width="156" height="10" rx="2"/>
+              <rect x="4"  y="468" width="24" height="14" rx="2"/>
+              <rect x="132" y="468" width="24" height="14" rx="2"/>
+              <rect x="46" y="472" width="16" height="10" rx="1"/>
+              <rect x="98" y="472" width="16" height="10" rx="1"/>
+            </g>
+
+            <!-- ts21: 3 arched openings at base -->
+            <g class="tower-section" id="ts21">
+              <!-- large centre arch -->
+              <path d="M 52 480 Q 80 430 108 480" fill="none" stroke-width="6" stroke-linecap="round"/>
+              <!-- left arch -->
+              <path d="M 6 480 Q 27 452 48 480" fill="none" stroke-width="5" stroke-linecap="round"/>
+              <!-- right arch -->
+              <path d="M 112 480 Q 133 452 154 480" fill="none" stroke-width="5" stroke-linecap="round"/>
+              <!-- lattice in left arch -->
+              <line x1="12" y1="472" x2="43" y2="458" stroke-width="1.5"/>
+              <line x1="43" y1="472" x2="12" y2="458" stroke-width="1.5"/>
+              <!-- lattice in right arch -->
+              <line x1="117" y1="472" x2="148" y2="458" stroke-width="1.5"/>
+              <line x1="148" y1="472" x2="117" y2="458" stroke-width="1.5"/>
+              <!-- lattice in centre arch -->
+              <line x1="60" y1="476" x2="80" y2="442" stroke-width="1.5"/>
+              <line x1="100" y1="476" x2="80" y2="442" stroke-width="1.5"/>
+              <line x1="56" y1="462" x2="104" y2="462" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts20: Outer curved legs — lower half -->
+            <g class="tower-section" id="ts20">
+              <!-- left outer leg: sweeps from x=16,y=468 curving to x=56,y=360 -->
+              <path d="M 16 468 C 6 430 14 400 42 375" fill="none" stroke-width="9" stroke-linecap="round"/>
+              <!-- right outer leg -->
+              <path d="M 144 468 C 154 430 146 400 118 375" fill="none" stroke-width="9" stroke-linecap="round"/>
+              <!-- left inner leg -->
+              <path d="M 52 478 C 42 450 42 415 52 390" fill="none" stroke-width="5" stroke-linecap="round"/>
+              <!-- right inner leg -->
+              <path d="M 108 478 C 118 450 118 415 108 390" fill="none" stroke-width="5" stroke-linecap="round"/>
+              <!-- X bracing left -->
+              <line x1="14" y1="455" x2="52" y2="422" stroke-width="1.5"/>
+              <line x1="52" y1="455" x2="14" y2="422" stroke-width="1.5"/>
+              <!-- X bracing right -->
+              <line x1="108" y1="455" x2="146" y2="422" stroke-width="1.5"/>
+              <line x1="146" y1="455" x2="108" y2="422" stroke-width="1.5"/>
+              <!-- horizontal stringer -->
+              <line x1="12" y1="436" x2="148" y2="436" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts19: Outer curved legs — upper half -->
+            <g class="tower-section" id="ts19">
+              <path d="M 42 375 C 28 358 28 372 56 360" fill="none" stroke-width="9" stroke-linecap="round"/>
+              <path d="M 118 375 C 132 358 132 372 104 360" fill="none" stroke-width="9" stroke-linecap="round"/>
+              <path d="M 52 390 C 46 375 48 366 56 360" fill="none" stroke-width="5" stroke-linecap="round"/>
+              <path d="M 108 390 C 114 375 112 366 104 360" fill="none" stroke-width="5" stroke-linecap="round"/>
+              <!-- X bracing left -->
+              <line x1="20" y1="390" x2="56" y2="365" stroke-width="1.5"/>
+              <line x1="56" y1="390" x2="20" y2="365" stroke-width="1.5"/>
+              <!-- X bracing right -->
+              <line x1="104" y1="390" x2="140" y2="365" stroke-width="1.5"/>
+              <line x1="140" y1="390" x2="104" y2="365" stroke-width="1.5"/>
+              <!-- horizontal stringer -->
+              <line x1="18" y1="380" x2="142" y2="380" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts18: 1st platform (widest) -->
+            <g class="tower-section" id="ts18">
+              <rect x="34" y="355" width="92" height="8" rx="2"/>
+              <rect x="28" y="361" width="104" height="5" rx="2"/>
+              <line x1="50" y1="355" x2="50" y2="366" stroke-width="2"/>
+              <line x1="80" y1="355" x2="80" y2="366" stroke-width="2"/>
+              <line x1="110" y1="355" x2="110" y2="366" stroke-width="2"/>
+            </g>
+
+            <!-- ts17: Body A — from 1st to midway (wide trapezoid) -->
+            <g class="tower-section" id="ts17">
+              <polygon points="36,355 124,355 114,328 46,328"/>
+              <line x1="55" y1="355" x2="54" y2="328" stroke-width="2"/>
+              <line x1="72" y1="355" x2="70" y2="328" stroke-width="2"/>
+              <line x1="80" y1="355" x2="80" y2="328" stroke-width="2"/>
+              <line x1="88" y1="355" x2="90" y2="328" stroke-width="2"/>
+              <line x1="105" y1="355" x2="106" y2="328" stroke-width="2"/>
+              <line x1="36" y1="355" x2="72" y2="328" stroke-width="1.5"/>
+              <line x1="72" y1="355" x2="36" y2="328" stroke-width="1.5"/>
+              <line x1="88" y1="355" x2="124" y2="328" stroke-width="1.5"/>
+              <line x1="124" y1="355" x2="88" y2="328" stroke-width="1.5"/>
+              <line x1="72" y1="355" x2="88" y2="328" stroke-width="1.5"/>
+              <line x1="88" y1="355" x2="72" y2="328" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts16: Body B -->
+            <g class="tower-section" id="ts16">
+              <polygon points="46,328 114,328 108,300 52,300"/>
+              <line x1="60" y1="328" x2="59" y2="300" stroke-width="2"/>
+              <line x1="73" y1="328" x2="72" y2="300" stroke-width="2"/>
+              <line x1="80" y1="328" x2="80" y2="300" stroke-width="2"/>
+              <line x1="87" y1="328" x2="88" y2="300" stroke-width="2"/>
+              <line x1="100" y1="328" x2="101" y2="300" stroke-width="2"/>
+              <line x1="46" y1="328" x2="80" y2="300" stroke-width="1.5"/>
+              <line x1="80" y1="328" x2="46" y2="300" stroke-width="1.5"/>
+              <line x1="80" y1="328" x2="114" y2="300" stroke-width="1.5"/>
+              <line x1="114" y1="328" x2="80" y2="300" stroke-width="1.5"/>
+              <line x1="48" y1="314" x2="112" y2="314" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts15: Body C -->
+            <g class="tower-section" id="ts15">
+              <polygon points="52,300 108,300 103,272 57,272"/>
+              <line x1="63" y1="300" x2="62" y2="272" stroke-width="2"/>
+              <line x1="74" y1="300" x2="73" y2="272" stroke-width="2"/>
+              <line x1="80" y1="300" x2="80" y2="272" stroke-width="2"/>
+              <line x1="86" y1="300" x2="87" y2="272" stroke-width="2"/>
+              <line x1="97" y1="300" x2="98" y2="272" stroke-width="2"/>
+              <line x1="52" y1="300" x2="80" y2="272" stroke-width="1.5"/>
+              <line x1="80" y1="300" x2="52" y2="272" stroke-width="1.5"/>
+              <line x1="80" y1="300" x2="108" y2="272" stroke-width="1.5"/>
+              <line x1="108" y1="300" x2="80" y2="272" stroke-width="1.5"/>
+              <line x1="54" y1="286" x2="106" y2="286" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts14: 2nd platform -->
+            <g class="tower-section" id="ts14">
+              <rect x="44" y="266" width="72" height="8" rx="2"/>
+              <rect x="40" y="272" width="80" height="5" rx="2"/>
+              <line x1="60" y1="266" x2="60" y2="277" stroke-width="2"/>
+              <line x1="80" y1="266" x2="80" y2="277" stroke-width="2"/>
+              <line x1="100" y1="266" x2="100" y2="277" stroke-width="2"/>
+            </g>
+
+            <!-- ts13: Mid body A -->
+            <g class="tower-section" id="ts13">
+              <polygon points="50,266 110,266 105,240 55,240"/>
+              <line x1="62" y1="266" x2="61" y2="240" stroke-width="2"/>
+              <line x1="73" y1="266" x2="72" y2="240" stroke-width="2"/>
+              <line x1="80" y1="266" x2="80" y2="240" stroke-width="2"/>
+              <line x1="87" y1="266" x2="88" y2="240" stroke-width="2"/>
+              <line x1="98" y1="266" x2="99" y2="240" stroke-width="2"/>
+              <line x1="50" y1="266" x2="80" y2="240" stroke-width="1.5"/>
+              <line x1="80" y1="266" x2="50" y2="240" stroke-width="1.5"/>
+              <line x1="80" y1="266" x2="110" y2="240" stroke-width="1.5"/>
+              <line x1="110" y1="266" x2="80" y2="240" stroke-width="1.5"/>
+              <line x1="52" y1="253" x2="108" y2="253" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts12: Mid body B -->
+            <g class="tower-section" id="ts12">
+              <polygon points="55,240 105,240 101,214 59,214"/>
+              <line x1="65" y1="240" x2="64" y2="214" stroke-width="2"/>
+              <line x1="74" y1="240" x2="73" y2="214" stroke-width="2"/>
+              <line x1="80" y1="240" x2="80" y2="214" stroke-width="2"/>
+              <line x1="86" y1="240" x2="87" y2="214" stroke-width="2"/>
+              <line x1="95" y1="240" x2="96" y2="214" stroke-width="2"/>
+              <line x1="55" y1="240" x2="80" y2="214" stroke-width="1.5"/>
+              <line x1="80" y1="240" x2="55" y2="214" stroke-width="1.5"/>
+              <line x1="80" y1="240" x2="105" y2="214" stroke-width="1.5"/>
+              <line x1="105" y1="240" x2="80" y2="214" stroke-width="1.5"/>
+              <line x1="57" y1="227" x2="103" y2="227" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts11: Mid body C -->
+            <g class="tower-section" id="ts11">
+              <polygon points="59,214 101,214 98,188 62,188"/>
+              <line x1="68" y1="214" x2="67" y2="188" stroke-width="2"/>
+              <line x1="76" y1="214" x2="75" y2="188" stroke-width="2"/>
+              <line x1="80" y1="214" x2="80" y2="188" stroke-width="2"/>
+              <line x1="84" y1="214" x2="85" y2="188" stroke-width="2"/>
+              <line x1="92" y1="214" x2="93" y2="188" stroke-width="2"/>
+              <line x1="59" y1="214" x2="80" y2="188" stroke-width="1.5"/>
+              <line x1="80" y1="214" x2="59" y2="188" stroke-width="1.5"/>
+              <line x1="80" y1="214" x2="101" y2="188" stroke-width="1.5"/>
+              <line x1="101" y1="214" x2="80" y2="188" stroke-width="1.5"/>
+              <line x1="61" y1="201" x2="99" y2="201" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts10: 3rd platform -->
+            <g class="tower-section" id="ts10">
+              <rect x="54" y="182" width="52" height="8" rx="2"/>
+              <rect x="50" y="188" width="60" height="5" rx="2"/>
+              <line x1="66" y1="182" x2="66" y2="193" stroke-width="2"/>
+              <line x1="80" y1="182" x2="80" y2="193" stroke-width="2"/>
+              <line x1="94" y1="182" x2="94" y2="193" stroke-width="2"/>
+            </g>
+
+            <!-- ts9: Upper body A -->
+            <g class="tower-section" id="ts9">
+              <polygon points="60,182 100,182 97,158 63,158"/>
+              <line x1="69" y1="182" x2="68" y2="158" stroke-width="1.5"/>
+              <line x1="77" y1="182" x2="76" y2="158" stroke-width="1.5"/>
+              <line x1="80" y1="182" x2="80" y2="158" stroke-width="1.5"/>
+              <line x1="83" y1="182" x2="84" y2="158" stroke-width="1.5"/>
+              <line x1="91" y1="182" x2="92" y2="158" stroke-width="1.5"/>
+              <line x1="60" y1="182" x2="80" y2="158" stroke-width="1.5"/>
+              <line x1="80" y1="182" x2="60" y2="158" stroke-width="1.5"/>
+              <line x1="80" y1="182" x2="100" y2="158" stroke-width="1.5"/>
+              <line x1="100" y1="182" x2="80" y2="158" stroke-width="1.5"/>
+              <line x1="61" y1="170" x2="99" y2="170" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts8: Upper body B -->
+            <g class="tower-section" id="ts8">
+              <polygon points="63,158 97,158 94,134 66,134"/>
+              <line x1="71" y1="158" x2="70" y2="134" stroke-width="1.5"/>
+              <line x1="77" y1="158" x2="77" y2="134" stroke-width="1.5"/>
+              <line x1="80" y1="158" x2="80" y2="134" stroke-width="1.5"/>
+              <line x1="83" y1="158" x2="83" y2="134" stroke-width="1.5"/>
+              <line x1="89" y1="158" x2="90" y2="134" stroke-width="1.5"/>
+              <line x1="63" y1="158" x2="80" y2="134" stroke-width="1.5"/>
+              <line x1="80" y1="158" x2="63" y2="134" stroke-width="1.5"/>
+              <line x1="80" y1="158" x2="97" y2="134" stroke-width="1.5"/>
+              <line x1="97" y1="158" x2="80" y2="134" stroke-width="1.5"/>
+              <line x1="65" y1="146" x2="95" y2="146" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts7: Upper body C -->
+            <g class="tower-section" id="ts7">
+              <polygon points="66,134 94,134 92,110 68,110"/>
+              <line x1="72" y1="134" x2="71" y2="110" stroke-width="1.5"/>
+              <line x1="77" y1="134" x2="77" y2="110" stroke-width="1.5"/>
+              <line x1="80" y1="134" x2="80" y2="110" stroke-width="1.5"/>
+              <line x1="83" y1="134" x2="83" y2="110" stroke-width="1.5"/>
+              <line x1="88" y1="134" x2="89" y2="110" stroke-width="1.5"/>
+              <line x1="66" y1="134" x2="80" y2="110" stroke-width="1.5"/>
+              <line x1="80" y1="134" x2="66" y2="110" stroke-width="1.5"/>
+              <line x1="80" y1="134" x2="94" y2="110" stroke-width="1.5"/>
+              <line x1="94" y1="134" x2="80" y2="110" stroke-width="1.5"/>
+              <line x1="67" y1="122" x2="93" y2="122" stroke-width="1.5"/>
+            </g>
+
+            <!-- ts6: Top platform -->
+            <g class="tower-section" id="ts6">
+              <rect x="62" y="104" width="36" height="7" rx="2"/>
+              <rect x="58" y="109" width="44" height="5" rx="2"/>
+              <line x1="70" y1="104" x2="70" y2="114" stroke-width="2"/>
+              <line x1="80" y1="104" x2="80" y2="114" stroke-width="2"/>
+              <line x1="90" y1="104" x2="90" y2="114" stroke-width="2"/>
+            </g>
+
+            <!-- ts5: Slim spire A -->
+            <g class="tower-section" id="ts5">
+              <polygon points="68,104 92,104 89,82 71,82"/>
+              <line x1="72" y1="104" x2="71" y2="82" stroke-width="1.5"/>
+              <line x1="77" y1="104" x2="76" y2="82" stroke-width="1.5"/>
+              <line x1="80" y1="104" x2="80" y2="82" stroke-width="1.5"/>
+              <line x1="83" y1="104" x2="84" y2="82" stroke-width="1.5"/>
+              <line x1="88" y1="104" x2="89" y2="82" stroke-width="1.5"/>
+              <line x1="68" y1="104" x2="89" y2="82" stroke-width="1.2"/>
+              <line x1="92" y1="104" x2="71" y2="82" stroke-width="1.2"/>
+              <line x1="68" y1="93" x2="92" y2="93" stroke-width="1.2"/>
+            </g>
+
+            <!-- ts4: Slim spire B -->
+            <g class="tower-section" id="ts4">
+              <polygon points="71,82 89,82 87,60 73,60"/>
+              <line x1="74" y1="82" x2="73" y2="60" stroke-width="1.5"/>
+              <line x1="78" y1="82" x2="78" y2="60" stroke-width="1.5"/>
+              <line x1="80" y1="82" x2="80" y2="60" stroke-width="1.5"/>
+              <line x1="82" y1="82" x2="82" y2="60" stroke-width="1.5"/>
+              <line x1="86" y1="82" x2="87" y2="60" stroke-width="1.5"/>
+              <line x1="71" y1="82" x2="87" y2="60" stroke-width="1.2"/>
+              <line x1="89" y1="82" x2="73" y2="60" stroke-width="1.2"/>
+              <line x1="72" y1="71" x2="88" y2="71" stroke-width="1.2"/>
+            </g>
+
+            <!-- ts3: Spire tip -->
+            <g class="tower-section" id="ts3">
+              <polygon points="73,60 87,60 85,42 75,42"/>
+              <line x1="76" y1="60" x2="75" y2="42" stroke-width="1.5"/>
+              <line x1="80" y1="60" x2="80" y2="42" stroke-width="1.5"/>
+              <line x1="84" y1="60" x2="85" y2="42" stroke-width="1.5"/>
+              <line x1="73" y1="60" x2="85" y2="42" stroke-width="1.2"/>
+              <line x1="87" y1="60" x2="75" y2="42" stroke-width="1.2"/>
+              <rect x="75" y="38" width="10" height="5" rx="1"/>
+              <rect x="77" y="34" width="6" height="5" rx="1"/>
+            </g>
+
+            <!-- ts2: Antenna shaft -->
+            <g class="tower-section" id="ts2">
+              <rect x="79" y="16" width="2" height="22" rx="1"/>
+              <rect x="77" y="26" width="6" height="2" rx="1"/>
+              <rect x="76" y="20" width="8" height="2" rx="1"/>
+            </g>
+
+            <!-- ts1: Antenna tip -->
+            <g class="tower-section" id="ts1">
+              <circle cx="80" cy="13" r="4"/>
+              <rect x="79" y="13" width="2" height="5"/>
+            </g>
+
+          </svg>
+        </div>
+
+        <div class="tower-progress-wrap">
+          <div class="tower-progress-bar">
+            <div class="tower-progress-fill" id="towerProgressFill"></div>
+          </div>
+          <span id="towerProgressText" class="tower-progress-text">0%</span>
+        </div>
+        <div class="points-display"><span id="currentPoints">0</span> pts</div>
+      </div>
+
+      <button class="btn-sm" onclick="showScreen('screen-login')">🔒 Change Team</button>
+      <button class="btn-sm" onclick="showChangePwModal()">🔑 Change Password</button>
+    </div>
+
+    <!-- CENTER -->
+    <div class="game-center">
+      <div class="phase-nav" id="phaseNav"></div>
+
+      <!-- Phase view -->
+      <div id="view-phase" class="game-view active">
+        <div class="phase-header" id="phaseHeader"></div>
+        <div class="process-list" id="processList"></div>
+      </div>
+
+      <!-- Process view -->
+      <div id="view-process" class="game-view">
+        <div class="breadcrumb" id="breadcrumb"></div>
+        <h3 id="processTitle" class="process-title"></h3>
+        <div class="subproc-list" id="subprocList"></div>
+        <button class="btn-secondary small" onclick="showPhaseView()">← Back to phase</button>
+      </div>
+
+      <!-- Task view -->
+      <div id="view-task" class="game-view">
+        <div class="breadcrumb" id="breadcrumbTask"></div>
+        <div class="task-card">
+          <div class="task-header">
+            <span class="task-badge">📝 Practical Task</span>
+            <span class="task-points-badge">+10 pts</span>
+          </div>
+          <h3 id="taskTitle" class="task-title"></h3>
+          <p id="taskDesc" class="task-desc"></p>
+          <div class="task-prompt-box">
+            <h4>📋 Instructions</h4>
+            <div id="taskTemplate"></div>
+          </div>
+          <div class="task-form">
+            <label>Your team's answer:</label>
+            <textarea id="taskAnswer" placeholder="Write your answer here..." rows="8"></textarea>
+          </div>
+          <div class="task-actions">
+            <button class="btn-secondary small" onclick="showProcessView()">← Back</button>
+            <button class="btn-secondary small" id="editBtn" onclick="enableTaskEdit()" style="display:none">✏️ Edit</button>
+            <button class="btn-secondary small" id="clearBtn" onclick="clearTaskAnswer()" style="display:none">🗑️ Clear</button>
+            <button class="btn-primary" id="validateBtn" onclick="validateTask()">📤 Submit Answer</button>
+          </div>
+        </div>
+
+        <div class="suggestions-wrap" id="suggestionsWrap">
+          <div class="suggestions-header">
+            <span class="suggestions-icon">💡</span>
+            <h4>Team Tips & Suggestions</h4>
+            <span class="suggestions-badge" id="suggestionsBadge"></span>
+          </div>
+          <div class="suggestions-list" id="suggestionsList"></div>
+          <div class="suggestions-form">
+            <textarea id="suggestionInput" class="suggestions-input" placeholder="Share a tip or suggestion with the other teams..." rows="2"></textarea>
+            <button id="suggestionBtn" class="suggestions-btn" onclick="submitSuggestion(window._currentSubprocId)">💡 Share</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== VICTORY ===== -->
+<div id="screen-victory" class="screen">
+  <div class="victory-container">
+    <div class="confetti-container" id="confettiContainer"></div>
+    <div class="victory-content">
+      <div class="victory-tower">
+        <svg viewBox="0 0 160 500" width="80" height="200">
+          <defs>
+            <linearGradient id="goldV" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FFE566"/>
+              <stop offset="50%" style="stop-color:#FFD700"/>
+              <stop offset="100%" style="stop-color:#B8860B"/>
+            </linearGradient>
+          </defs>
+          <!-- Ground -->
+          <rect x="2" y="480" width="156" height="10" rx="2" fill="url(#goldV)"/>
+          <!-- 3 arches -->
+          <path d="M 52 480 Q 80 430 108 480" fill="none" stroke="url(#goldV)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M 6 480 Q 27 452 48 480" fill="none" stroke="url(#goldV)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M 112 480 Q 133 452 154 480" fill="none" stroke="url(#goldV)" stroke-width="5" stroke-linecap="round"/>
+          <!-- Legs -->
+          <path d="M 16 468 C 6 430 14 400 42 375" fill="none" stroke="url(#goldV)" stroke-width="9" stroke-linecap="round"/>
+          <path d="M 144 468 C 154 430 146 400 118 375" fill="none" stroke="url(#goldV)" stroke-width="9" stroke-linecap="round"/>
+          <path d="M 52 478 C 42 450 42 415 52 390" fill="none" stroke="url(#goldV)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M 108 478 C 118 450 118 415 108 390" fill="none" stroke="url(#goldV)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M 42 375 C 28 358 28 372 56 360" fill="none" stroke="url(#goldV)" stroke-width="9" stroke-linecap="round"/>
+          <path d="M 118 375 C 132 358 132 372 104 360" fill="none" stroke="url(#goldV)" stroke-width="9" stroke-linecap="round"/>
+          <!-- 1st platform -->
+          <rect x="28" y="355" width="104" height="13" rx="2" fill="url(#goldV)"/>
+          <!-- Body to 2nd platform -->
+          <polygon points="36,355 124,355 108,272 52,272" fill="url(#goldV)" stroke="#B8860B" stroke-width="1"/>
+          <!-- 2nd platform -->
+          <rect x="40" y="266" width="80" height="13" rx="2" fill="url(#goldV)"/>
+          <!-- Body to 3rd platform -->
+          <polygon points="50,266 110,266 98,188 62,188" fill="url(#goldV)" stroke="#B8860B" stroke-width="1"/>
+          <!-- 3rd platform -->
+          <rect x="50" y="182" width="60" height="13" rx="2" fill="url(#goldV)"/>
+          <!-- Upper body -->
+          <polygon points="60,182 100,182 92,104 68,104" fill="url(#goldV)" stroke="#B8860B" stroke-width="1"/>
+          <!-- Top platform -->
+          <rect x="58" y="104" width="44" height="12" rx="2" fill="url(#goldV)"/>
+          <!-- Spire -->
+          <polygon points="66,104 94,104 83,42 77,42" fill="url(#goldV)" stroke="#B8860B" stroke-width="1"/>
+          <rect x="75" y="34" width="10" height="10" rx="1" fill="url(#goldV)"/>
+          <!-- Antenna -->
+          <rect x="79" y="10" width="2" height="26" rx="1" fill="url(#goldV)"/>
+          <circle cx="80" cy="8" r="5" fill="url(#goldV)"/>
+        </svg>
+      </div>
+      <div class="victory-stars">⭐⭐⭐</div>
+      <h1 class="victory-title">CONGRATULATIONS!</h1>
+      <h2 class="victory-team" id="victoryTeamName"></h2>
+      <p class="victory-msg">You have completed the Eiffel Tower!<br>You are the Process Champions!</p>
+      <div class="victory-trophy">🏆</div>
+      <p class="victory-prize">A surprise awaits you... 🎁</p>
+      <div class="victory-podium" id="victoryPodium"></div>
+      <button class="btn-primary" onclick="loadState().then(()=>showScreen('screen-login'))">🎮 Continue Game</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
